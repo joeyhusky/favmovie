@@ -38,7 +38,7 @@ async function addMovieToFavs(ctx: Context) {
   ctx.response.status = Status.OK;
 }
 
-function removeFromFavs(ctx: Context) {
+function removeMovieFromFavs(ctx: Context) {
   const { id } = helpers.getQuery(ctx, { mergeParams: true });
   const userId = parseAndCoerceUUID(ctx.request.headers.get("X-MID"));
   if (userId == null || id == null) {
@@ -53,5 +53,5 @@ function removeFromFavs(ctx: Context) {
 export const setupRoutes = new Router()
   .get("/movies/search", search)
   .get("/movies/:id", getDetails)
-  .post("/movies/:id/favs", addMovieToFavs);
-// .delete("/movies/:id/favs", removeMovieFromFavs));
+  .post("/movies/:id/favs", addMovieToFavs)
+  .delete("/movies/:id/favs", removeMovieFromFavs);
