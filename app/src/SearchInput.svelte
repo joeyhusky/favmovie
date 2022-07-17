@@ -19,12 +19,12 @@
 </script>
 
 <div class="search">
-  <input type="text" placeholder="Search" on:keyup={keyUp} />
+  <input type="text" on:keyup={keyUp} />
   <h3>{key}</h3>
 
   {#if suggestions.length > 0}
   <ul>
-    {#each suggestions as suggestion, idx (suggestions.id) }
+    {#each suggestions as suggestion, idx (suggestion.id) }
     <li
       class:odd={idx % 2 === 1}>
 
