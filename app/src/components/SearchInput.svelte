@@ -1,7 +1,5 @@
 <script lang="ts">
-  import { createEventDispatcher } from "svelte";
-  import * as env from "./env";
-  import * as MovieApi from "./api/MovieApi";
+  import * as MovieApi from "../api/MovieApi";
 
   let key = "";
   let suggestions = [];
@@ -15,7 +13,6 @@
       suggestions = [];
     }
   }
-
 </script>
 
 <div class="search">

@@ -1,7 +1,5 @@
 <script lang="ts">
-import SearchInput from "./SearchInput.svelte";
-
-
+	import SearchInput from "./components/SearchInput.svelte";
 </script>
 
 <main>
